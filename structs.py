@@ -8,6 +8,12 @@ class Register(EIP712Struct):
     message = String()
     nonce = Uint(64)
 
+class Withdraw(EIP712Struct):
+    sender = Address()
+    token = Address()
+    amount = Uint(128)
+    nonce = Uint(64)
+
 """
 Order: [
     { name: "sender", type: "address" },

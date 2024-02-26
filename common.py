@@ -7,6 +7,7 @@ from eip712_structs import make_domain, EIP712Struct
 class Config:
     bsx_url: str
     domain: EIP712Struct
+    usdc_address: str
 
 
 def get_config(url):
@@ -25,6 +26,7 @@ TESTNET_CONFIG = Config(
         chainId=testnet_config_data["chain_id"],
         verifyingContract=testnet_config_data["verifying_contract"],  # note the changed naming convention here
     ),
+    usdc_address=testnet_config_data["addresses"]["usdc_contract"],
 )
 print("TESTNET_CONFIG", TESTNET_CONFIG)
 
@@ -37,6 +39,7 @@ MAINNET_CONFIG = Config(
         chainId=mainnet_config_data["chain_id"],
         verifyingContract=mainnet_config_data["verifying_contract"],  # note the changed naming convention here
     ),
+    usdc_address=testnet_config_data["addresses"]["usdc_contract"],
 )
 
 print("MAINNET_CONFIG", MAINNET_CONFIG)
