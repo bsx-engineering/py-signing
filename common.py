@@ -24,27 +24,31 @@ TESTNET_CONFIG = Config(
         name=testnet_config_data["name"],
         version=testnet_config_data["version"],
         chainId=testnet_config_data["chain_id"],
-        verifyingContract=testnet_config_data["verifying_contract"],  # note the changed naming convention here
+        verifyingContract=testnet_config_data[
+            "verifying_contract"
+        ],  # note the changed naming convention here
     ),
     usdc_address=testnet_config_data["addresses"]["usdc_contract"],
 )
 print("TESTNET_CONFIG", TESTNET_CONFIG)
 
-mainnet_config_data = get_config("https://api.testnet.bsx.exchange/chain/configs")
+mainnet_config_data = get_config("https://api.bsx.exchange/chain/configs")
 MAINNET_CONFIG = Config(
-    bsx_url="https://api.testnet.bsx.exchange",
+    bsx_url="https://api.bsx.exchange",
     domain=make_domain(
         name=mainnet_config_data["name"],
         version=mainnet_config_data["version"],
         chainId=mainnet_config_data["chain_id"],
-        verifyingContract=mainnet_config_data["verifying_contract"],  # note the changed naming convention here
+        verifyingContract=mainnet_config_data[
+            "verifying_contract"
+        ],  # note the changed naming convention here
     ),
     usdc_address=testnet_config_data["addresses"]["usdc_contract"],
 )
 
 print("MAINNET_CONFIG", MAINNET_CONFIG)
 
-X18_DECIMALS = 10 ** 18
+X18_DECIMALS = 10**18
 
 
 # TESTNET_URL = "http://localhost:8090"
